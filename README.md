@@ -8,9 +8,8 @@ Currently a public repository place holder. In Progress.
 ```
 git clone https://github.com/ret2eax/snowauidt.git ; cd snowaudit/
 pip3 install -r requirements.txt
-chmod +x snowfall.py
 ```
 ## USAGE
 ```
-./snowfall.py <path/to/sysproperties.list>
+Point input to /path/to/sysproperties.list
 ```
