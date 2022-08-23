@@ -6,7 +6,7 @@ Currently a public repository place holder. In Progress.
 
 ## INSTALL
 ```
-git clone https://github.com/ret2eax/snowauidt.git ; cd snowaudit/
+git clone https://github.com/ret2eax/snowaudit.git ; cd snowaudit/
 pip3 install -r requirements.txt
 ```
 ## USAGE
