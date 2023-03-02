@@ -44,7 +44,7 @@ Further, it's **important** to note that the specific configurations and best pr
 
 ## Usage
 
-There is no current support to fetch a `sys_properties` export directly from a ServiceNow instance. In the future, support will be added for this http parse feature. For the time being, the configuration file will need to be exported seperatley:
+There is no current support to fetch a `sys_properties` export directly from a ServiceNow instance. In the future, support will be added for this http parse feature. For the time being, the configuration file will need to be exported manually:
 
 
 1. Authenticate into your ServiceNow instance, or get the client to provide you with their ServiceNow `sys_properties` export.
