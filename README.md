@@ -4,11 +4,12 @@
 
 # About
 
-Ghetto software written in C# which autononomously identifies security issues within integrated ServiceNow configurations. 
+Ghetto software written in C# that autononomously identifies security issues within integrated ServiceNow configurations. 
 
 This is currently undergoing testing, and will be released in the next coming weeks.
 
 ## USAGE
+
 ```
 Point input to /path/to/sysproperties.list
 ```
