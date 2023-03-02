@@ -60,7 +60,7 @@ There is no current support to fetch a `sys_properties` export directly from a S
 | glide.ui.secure_cookies  | false | true | Ensures that all cookies used by the platform contain the secure flag |
 | glide.script.use.sandbox | false | true | Enables the script sandbox feature to restrict execution of untrusted scripts |
 | glide.login.no_blank_password | true | true | Prevents users from setting blank passwords |
-| glide.security.csrf_enabled | false | true | Enable Cross-Site Request Forgery (CSRF) protection |
+| glide.security.csrf_enabled | false | true | Enables Cross-Site Request Forgery (CSRF) protection |
 | glide.security.file.mime_type.validation | true | true | Validates MIME types |
 
 
