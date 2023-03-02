@@ -1,3 +1,4 @@
+<!-- other logo colours and schemes
 <p align="center">
   <img width="600" src="https://i.postimg.cc/qvY12TPD/snowaudit-v2.png">
 </p>
@@ -14,13 +15,13 @@
   <img width="600" src="https://i.postimg.cc/YqXLVyLL/snowy-snowauditv3-1.png">
 </p>
 
+<p align="center">
+  <img width="600" src="https://i.postimg.cc/nLd0d1YH/snowy-pinksnowaudit.png">
+</p>-->
+
 
 <p align="center">
   <img width="600" src="https://i.postimg.cc/6qyYZ4DM/snowy-snowauditv4.png">
-</p>
-
-<p align="center">
-  <img width="600" src="https://i.postimg.cc/nLd0d1YH/snowy-pinksnowaudit.png">
 </p>
 
 
