@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img width="600" src="https://i.postimg.cc/L4ZWhzD7/snowy-snowauditv3.png">
+  <img width="600" src="https://i.postimg.cc/YqXLVyLL/snowy-snowauditv3-1.png">
 </p>
 
 
