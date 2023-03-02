@@ -6,6 +6,11 @@
   <img width="600" src="https://i.postimg.cc/tJdChZhz/snowy-snowauditv2.png">
 </p>
 
+#
+![](https://img.shields.io/github/languages/code-size/ret2eax/snowaudit)
+![](https://img.shields.io/github/stars/ret2eax/snowaudit)
+![](https://img.shields.io/badge/release%20date-not%20yet%20released-blue)
+![](https://img.shields.io/github/downloads/ret2eax/snowaudit/total)
 
 # About
 
