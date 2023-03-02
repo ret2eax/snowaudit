@@ -7,10 +7,11 @@
 </p>
 
 #
-![](https://img.shields.io/github/languages/code-size/ret2eax/snowaudit)
-![](https://img.shields.io/github/stars/ret2eax/snowaudit)
-![](https://img.shields.io/badge/release%20date-not%20yet%20released-blue)
-![](https://img.shields.io/github/downloads/ret2eax/snowaudit/total)
+![](https://img.shields.io/github/languages/code-size/ret2eax/snowaudit?style=flat-square)
+![](https://img.shields.io/github/stars/ret2eax/snowaudit?style=flat-square)
+![](https://img.shields.io/github/watchers/ret2eax/snowaudit?style=flat-square)
+![](https://img.shields.io/badge/release%20date-not%20yet%20released-blue?style=flat-square)
+![](https://img.shields.io/github/downloads/ret2eax/snowaudit/total?style=flat-square)
 
 # About
 
