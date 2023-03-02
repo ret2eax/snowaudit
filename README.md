@@ -40,7 +40,7 @@ It's important to **note** that this program is designed to assist you during a 
 
 Further, it's **important** to note that the specific configurations and best practices may vary depending on the requirements and policies of an organisation.
 
-**snowaudit** is currently in testing and will be released in the next coming weeks. Feel free to star or watch this project for updates.
+**snowaudit** is currently in testing and will be released in the next coming weeks. Feel free to star or watch this project for further updates.
 
 ## Usage
 
@@ -57,8 +57,8 @@ For the time being, there is no support to fetch a `sys_properties` export direc
 | Attribute | Current | Recommended | Description |
 |------|-------|-------------------|-------------|
 | glide.ui.rotate_sessions | false | true | Automatically rotates user sessions periodically |
-| glide.ui.secure_cookies  | false | true | Ensures that all cookies used by the platform are contain the secure flag |
-| glide.script.use.sandbox | false | true | Enables the script sandbox feature to restrict the execution of untrusted scripts |
+| glide.ui.secure_cookies  | false | true | Ensures that all cookies used by the platform contain the secure flag |
+| glide.script.use.sandbox | false | true | Enables the script sandbox feature to restrict execution of untrusted scripts |
 | glide.login.no_blank_password | true | true | Prevents users from setting blank passwords |
 | glide.security.csrf_enabled | false | true | Enable Cross-Site Request Forgery (CSRF) protection |
 | glide.security.file.mime_type.validation | true | true | Validates MIME types |
