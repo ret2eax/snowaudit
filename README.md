@@ -24,7 +24,7 @@ Further, it's **important** to note that the specific configurations and best pr
 ## Usage
 
 ```
-Point input to /path/to/sysproperties.list
+Point input to /path/to/sys_properties.list
 ```
 
 **snowaudit** is currently in testing and will be released in the next coming weeks. Feel free to star or watch this project for updates.
