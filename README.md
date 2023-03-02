@@ -50,7 +50,7 @@ For the time being, there is no support to fetch a `sys_properties` export direc
 1. Authenticate into your ServiceNow instance, or get the client to provide you with their ServiceNow `sys_properties` export.
 2. Export the ServiceNow `sys_properties` to `csv` format `{base_url}/sys_properties_list.do?CSV}`,
 3. Run `snowaudit.exe` and browse to your `sys_properties.csv` export,
-4. Click `analyze`.
+4. Click `audit`.
 
 ### Example Output (Truncated)
 
