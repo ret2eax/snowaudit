@@ -40,13 +40,29 @@ It's important to **note** that this program is designed to assist you during a 
 
 Further, it's **important** to note that the specific configurations and best practices may vary depending on the requirements and policies of an organisation.
 
+**snowaudit** is currently in testing and will be released in the next coming weeks. Feel free to star or watch this project for updates.
+
 ## Usage
 
-```
-Point input to /path/to/sys_properties.list
-```
+For the time being, there is no support to fetch a `sys_properties` export directly from a ServiceNow instance. In the future, support will be added for this http parse feature. For the time being, the configuration file will need to be exported seperatley:
 
-**snowaudit** is currently in testing and will be released in the next coming weeks. Feel free to star or watch this project for updates.
+
+1. Authenticate into your ServiceNow instance, or get the client to provide you with their ServiceNow `sys_properties` export.
+2. Export the ServiceNow `sys_properties` to `csv` format `{base_url}/sys_properties_list.do?CSV}`,
+3. Run `snowaudit.exe` and browse to your `sys_properties.csv` export,
+4. Click `analyze`.
+
+### Example Output (Truncated)
+
+| Attribute | Current | Recommended | Description |
+|------|-------|-------------------|-------------|
+| glide.ui.rotate_sessions | false | true | Automatically rotates user sessions periodically |
+| glide.ui.secure_cookies  | false | true | Ensures that all cookies used by the platform are contain the secure flag |
+| glide.script.use.sandbox | false | true | Enables the script sandbox feature to restrict the execution of untrusted scripts |
+| glide.login.no_blank_password | true | true | Prevents users from setting blank passwords |
+| glide.security.csrf_enabled | false | true | Enable Cross-Site Request Forgery (CSRF) protection |
+| glide.security.file.mime_type.validation | true | true | Validates MIME types |
+
 
 ## Terms of Use
 
