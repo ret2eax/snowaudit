@@ -33,8 +33,8 @@
 ![](https://img.shields.io/github/downloads/ret2eax/snowaudit/total?style=flat-square)
 
 # About
-
-Ghetto software written in C# that aims to autononomously identify security issues within integrated ServiceNow configurations. 
+ 
+Ghetto software written in C# that aims to assist in instance hardenining, through the identification of security issues within integrated ServiceNow configurations.
 
 It's important to **note** that this program is designed to assist you during a configuration review, and should **not** replace manual review. Therefore, it is recommended that this tool **not** be solely relied on, but rather used in support of your own analysis.
 
