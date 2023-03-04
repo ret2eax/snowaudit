@@ -54,7 +54,7 @@ There is no current support to fetch a `sys_properties` export directly from a S
 
 ### Example Output (Truncated)
 
-| Attribute | Current | Recommended | Description |
+| Definition | Current | Recommended | Description |
 |------|-------|-------------------|-------------|
 | glide.ui.rotate_sessions | false | true | Automatically rotates user sessions periodically |
 | glide.ui.secure_cookies  | false | true | Ensures that all cookies used by the platform contain the secure flag |
