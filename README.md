@@ -40,6 +40,10 @@ It's important to **note** that this program is designed to assist you during a 
 
 Further, it's **important** to note that the specific configurations and best practices may vary depending on the requirements and policies of an organisation.
 
+## Download
+
+Download the exectuable from [releases](https://github.com/ret2eax/snowaudit/releases).
+
 **snowaudit** is currently in testing and will be released in the next coming weeks. Feel free to star or watch this project for further updates.
 
 ## Usage
