@@ -44,7 +44,7 @@ Further, it's **important** to note that the specific configurations and best pr
 
 Download the portable exectuable from [releases](https://github.com/ret2eax/snowaudit/releases).
 
-**snowaudit** is currently in testing and will be released in the next coming weeks. Feel free to star or watch this project for further updates.
+**SNOWAUDIT** is currently in beta and will be released soon. Feel free to star or watch this repo project for further updates.
 
 ## Usage
 
