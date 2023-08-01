@@ -42,12 +42,20 @@ Further, it's **important** to note that the specific configurations and best pr
 
 ## Download
 
-```
+**snowaudit** is still currently in development and will be released soon. Functionality in pertinence to best security practices is still an ongoing effort. Feel free to star or watch this repo project for further updates. Pull requests are welcome if you wish to add contributions.
+
+### Release Builds (Recommended)
+
+
+### Manual Build
+
+```sh
 git clone https://github.com/ret2eax/snowaudit.git
 cd snowaudit
+rustup target add #{target}
+cargo build --release --target #{target}
 ```
 
-**snowaudit** is still currently in development and will be released soon. Functionality in pertinence to best security practices is still an ongoing effort. Feel free to star or watch this repo project for further updates. Pull requests are welcome if you wish to add contributions.
 
 ## Usage
 
@@ -56,14 +64,13 @@ There is no current support to fetch a `sys_properties` export directly from a S
 
 * Authenticate into your ServiceNow instance, or get the client to provide you with their ServiceNow `sys_properties` export.
 * Export the ServiceNow `sys_properties` to `csv` format `{base_url}/sys_properties_list.do?CSV}`,
-* Build and run `snowaudit`:
+* Run `snowaudit` on the `sys_properties.list.csv` export:
 
-```
-cargo build
-cargo run sys_properties.list.csv
+```sh
+./snowaudit sys_properties.list.csv
 ```
 
-* View the `output.html` export.
+* View `snowaudit_report.html` output.
 
 ### Example Output (Truncated)
 
