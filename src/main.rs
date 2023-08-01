@@ -18,7 +18,7 @@ struct CsvRow {
 fn main() {
     let args: Vec<String> = std::env::args().collect();
     if args.len() != 2 {
-        eprintln!("Usage: cargo run -- sys_properties.list.csv");
+        eprintln!("Usage: ./{snowaudit} /path/to/sys_properties.list.csv");
         return;
     }
 
@@ -89,7 +89,7 @@ fn main() {
     html_output.push_str("</table></body></html>");
 
     // Save HTML output to a file
-    let output_file = Path::new("output.html");
+    let output_file = Path::new("snowaudit_report.html");
     std::fs::write(output_file, html_output).expect("Failed to write HTML output to file.");
 }
 
