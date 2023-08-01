@@ -27,8 +27,9 @@ fn main() {
     let file = File::open(csv_file).expect("Failed to open file.");
     let mut rdr = Reader::from_reader(file);
 
+    //Once the basics are done, refactor this. Use the handlebars dependency and integrate the use of a HTML template (BTreeMap)
     let mut html_output = String::new();
-    html_output.push_str("<html><head><title>System Properties Audit</title>");
+    html_output.push_str("<html><head><title>SNOWAUDIT</title>");
     html_output.push_str("<style>");
     html_output.push_str("body { font-family: Arial, sans-serif; text-align: center; background-color: #100E16; color: #f2f2f2; }");
     html_output.push_str("table { border-collapse: collapse; width: 80%; margin: auto; }");
