@@ -34,7 +34,7 @@
 
 # About
  
-Ghetto software written in Rust that aims to assist in instance hardening, through the identification of security issues within integrated ServiceNow configurations.
+Ghetto program written in Rust that aims to assist in instance hardening, through the identification of security issues within integrated ServiceNow configurations.
 
 It's important to **note** that this program is designed to assist you during a configuration review, and should **not** replace manual review. Therefore, it is recommended that this tool **not** be solely relied on, but rather used in support of your own analysis.
 
@@ -42,9 +42,7 @@ Further, it's **important** to note that the specific configurations and best pr
 
 ## Download
 
-**snowaudit** is still currently in development and will be released soon. Functionality in pertinence to best security practices is still an ongoing effort. Feel free to star or watch this repo project for further updates. Pull requests are welcome if you wish to add contributions.
-
-### Release Builds (Recommended)
+<!-- ### Release Builds (Recommended)
 
 The following release builds can be pulled from [releases](https://github.com/ret2eax/snowaudit/releases):
 
@@ -52,31 +50,30 @@ The following release builds can be pulled from [releases](https://github.com/re
 * `x86_64-pc-windows-gnu` (Windows)
 * `x86_64-unknown-linux-gnu` (Linux)
 
-### Manual Build
-
-Either approach [1], or [2]:
-
-[1]
+### Manual Build -->
 
 ```sh
 git clone https://github.com/ret2eax/snowaudit.git
 cd snowaudit
 rustup target add #{target}
 cargo build --release --target #{target}
+cd target/{target}/release
+./snowaudit
 ```
 
-[2]
+Or, build and run project:
 
 ```
 git clone https://github.com/ret2eax/snowaudit.git
 cd snowaudit/src
-cargo run
+cargo run 
 ```
+
+**snowaudit** is still currently in development. Functionality in pertinence to best security practices is still an ongoing effort. Feel free to star or watch this repo project for further updates. Pull requests are welcome if you wish to add contributions.
 
 ## Usage
 
 There is no current support to fetch a `sys_properties` export directly from a ServiceNow instance. In the future, support will be added for this http parse feature. For the time being, the configuration file will need to be exported manually:
-
 
 * Authenticate into your ServiceNow instance, or get the client to provide you with their ServiceNow `sys_properties` export.
 * Export the ServiceNow `sys_properties` to `csv` format `{base_url}/sys_properties_list.do?CSV}`,
@@ -92,12 +89,12 @@ There is no current support to fetch a `sys_properties` export directly from a S
 
 | DEFINITION | CURRENT | RECOMMENDED | DESCRIPTION |
 |------|-------|-------------------|-------------|
-| glide.ui.rotate_sessions | false | true | Automatically rotates user sessions periodically |
-| glide.ui.secure_cookies  | false | true | Ensures that all cookies used by the platform contain the secure flag |
-| glide.script.use.sandbox | false | true | Enables the script sandbox feature to restrict execution of untrusted scripts |
-| glide.login.no_blank_password | true | true | Prevents users from setting blank passwords |
-| glide.security.csrf_enabled | false | true | Enables Cross-Site Request Forgery (CSRF) protection |
-| glide.security.file.mime_type.validation | true | true | Validates MIME types |
+| glide.ui.rotate_sessions | false | TRUE | Automatically rotates user sessions periodically |
+| glide.ui.secure_cookies  | false | TRUE | Ensures that all cookies used by the platform contain the secure flag |
+| glide.script.use.sandbox | false | TRUE | Enables the script sandbox feature to restrict execution of untrusted scripts |
+| glide.login.no_blank_password | true | TRUE | Prevents users from setting blank passwords |
+| glide.security.csrf_enabled | false | TRUE | Enables Cross-Site Request Forgery (CSRF) protection |
+| glide.security.file.mime_type.validation | true | TRUE | Validates MIME types |
 
 
 ## Terms of Use
