@@ -47,7 +47,7 @@ git clone https://github.com/ret2eax/snowaudit.git
 cd snowaudit
 ```
 
-**SNOWAUDIT** is currently in beta and will be released soon. Functionality in pertinence to best security practices is still an ongoing effort. Feel free to star or watch this repo project for further updates, or create a pull request if you'd like to add contributions.
+**SNOWAUDIT** is currently in beta and will be released soon. Functionality in pertinence to best security practices is still an ongoing effort. Feel free to star or watch this repo project for further updates. Pull requests are welcome if you wish to add contributions.
 
 ## Usage
 
