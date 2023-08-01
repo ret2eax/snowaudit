@@ -36,7 +36,7 @@ fn main() {
     html_output.push_str("td { max-width: 300px; white-space: pre-wrap; word-wrap: break-word; }");
     html_output.push_str("img { display: block; margin: 10px auto; width: 500px; }");
     html_output.push_str("</style></head><body>");
-    html_output.push_str("<img src=\"image.png\" width=\"500\">");
+    html_output.push_str("<img width=\"600\" src=\"https://i.postimg.cc/6qyYZ4DM/snowy-snowauditv4.png\">");
     html_output.push_str("<table>");
     html_output.push_str("<tr><th>Definition</th><th>Current</th><th>Recommended</th><th>Description</th></tr>");
 
