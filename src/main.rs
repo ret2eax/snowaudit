@@ -1,6 +1,6 @@
 use csv::Reader;
 use serde::Deserialize;
-use std::fs::File;
+use std::fs;
 use std::path::Path;
 
 #[derive(Debug, Deserialize)]
@@ -38,31 +38,12 @@ fn main() {
     html_output.push_str("</style></head><body>");
     html_output.push_str("<img width=\"600\" src=\"https://i.postimg.cc/6qyYZ4DM/snowy-snowauditv4.png\">");
     html_output.push_str("<table>");
-    html_output.push_str("<tr><th>Definition</th><th>Current</th><th>Recommended</th><th>Description</th></tr>");
+    html_output.push_str("<tr><th>DEFINITION</th><th>CURRENT</th><th>RECOMMENDED</th><th>DESCRIPTION</th></tr>");
 
-  // best security practice values go here
-  // Example format: ["Display name", "Value", "Recommended", "Description"]
-  // best security practice values go here
-  // These values should be added in the form of an array of strings, each representing a row
-  // in the CSV table. Each array element should contain four elements in the following format:
-  // ["Display Name", "Value", "Recommended", "Description"]
-  //
-  // - "Display Name": The name of the system property or configuration.
-  // - "Value": The current value of the system property or configuration.
-  // - "Recommended": The recommended value for the system property or configuration based on
-  //                  best security practices.
-  // - "Description": A brief description or explanation of the system property or configuration. 
-  //
-  // For example:
-  // let best_security_practice_values = vec![
-  //     ["glide.ui.rotate_sessions", "false", "true", "Enable session rotation for increased security"],
-  //     ["security.enable_ssl3", "true", "false", "Disable SSLv3 to mitigate vulnerabilities"],
-  //     // Add more rows here as needed...
-  // ];
-  //
-  // You can use this array to populate the HTML table in the output with the recommended values
-  // for each system property or configuration.
-
+    // best security practice values go here
+    // Example format: ["Display name", "Value", "Recommended", "Description"]
+    // best security practice values go here
+    // ...
 
     for result in rdr.deserialize::<CsvRow>() {
         match result {
@@ -90,11 +71,16 @@ fn main() {
 
     // Save HTML output to a file
     let output_file = Path::new("snowaudit_report.html");
-    std::fs::write(output_file, html_output).expect("Failed to write HTML output to file.");
+    if let Err(error) = fs::write(output_file, html_output) {
+        // Handle the error if writing fails
+        eprintln!("Failed to write HTML output to file: {}", error);
+    } else {
+        // Handle the success case
+        println!("Success. Navigate to the snowaudit_report.html export for results.");
+    }
 }
 
 // Function to encode text to HTML entities to prevent HTML injection.
 fn encode_text_minimal(text: &str) -> String {
     html_escape::encode_text_minimal(text).into_owned()
 }
-
