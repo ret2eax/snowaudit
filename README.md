@@ -48,11 +48,13 @@ Further, it's **important** to note that the specific configurations and best pr
 
 The following release builds can be pulled from [releases](https://github.com/ret2eax/snowaudit/releases):
 
-* macOS `x86_64 apple darwin`
-* Windows `x86_64-pc-windows-gnu`
-* Linux `x86_64-unknown-linux-gnu`
+* `x86_64 apple darwin` (macOS)
+* `x86_64-pc-windows-gnu` (Windows)
+* `x86_64-unknown-linux-gnu` (Linux)
 
 ### Manual Build
+
+Either approach [1], or [2]:
 
 [1]
 
