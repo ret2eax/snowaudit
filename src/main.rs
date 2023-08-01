@@ -36,8 +36,27 @@ fn main() {
     html_output.push_str("th { background-color: #000; }");
     html_output.push_str("td { max-width: 300px; white-space: pre-wrap; word-wrap: break-word; }");
     html_output.push_str("img { display: block; margin: 10px auto; width: 500px; }");
-    html_output.push_str("</style></head><body>");
+    html_output.push_str(".unsupported { display: table-row; }");
+    html_output.push_str(".toggle-switch { display: inline-block; width: 40px; height: 20px; background-color: #3498db; border-radius: 10px; position: relative; cursor: pointer; transition: background-color 0.2s; }");
+    html_output.push_str(".toggle-switch::before { content: ''; position: absolute; width: 16px; height: 16px; background-color: #fff; border-radius: 50%; top: 2px; left: 2px; transition: 0.2s; }");
+    html_output.push_str(".toggle-switch.active { background-color: #4CAF50; }");
+    html_output.push_str(".toggle-switch.active::before { transform: translateX(20px); }");
+    html_output.push_str("</style>");
+    html_output.push_str("<script>");
+    html_output.push_str("function toggleUnsupported() {");
+    html_output.push_str("  var unsupportedRows = document.getElementsByClassName('unsupported');");
+    html_output.push_str("  for (var i = 0; i < unsupportedRows.length; i++) {");
+    html_output.push_str("    unsupportedRows[i].style.display = unsupportedRows[i].style.display === 'none' ? 'table-row' : 'none';");
+    html_output.push_str("  }");
+    html_output.push_str("  var toggleSwitch = document.getElementById('toggle-switch');");
+    html_output.push_str("  toggleSwitch.classList.toggle('active');");
+    html_output.push_str("}");
+    html_output.push_str("</script>");
+    html_output.push_str("</head><body>");
     html_output.push_str("<img width=\"600\" src=\"https://i.postimg.cc/6qyYZ4DM/snowy-snowauditv4.png\">");
+    html_output.push_str("<div class=\"toggle-switch\" id=\"toggle-switch\" onclick=\"toggleUnsupported()\"></div>");
+    html_output.push_str("<p>Hide/Show Unsupported Definitions</p>");
+    html_output.push_str("<p></p><p></p>");
     html_output.push_str("<table>");
     html_output.push_str("<tr><th>DEFINITION</th><th>CURRENT</th><th>RECOMMENDED</th><th>DESCRIPTION</th></tr>");
 
@@ -51,11 +70,10 @@ fn main() {
     // - "Recommended": The recommended value for the system property or configuration based on
     //                  best security practices.
     // - "Description": A brief description or explanation of the system property or configuration.
-    
     let best_security_practice_values = vec![
         ["glide.security.csrf.strict.validation.mode", "false", "true", "Enforces CSRF token strict validation that does not allow resubmit the request if CSRF token does not match."],
         ["glide.security.csrf_previous.allow", "false", "true", "Allow usage of an expired secure token to identify and validate incoming requests.  This token is used to prevent CSRF attacks."]
-        // Add more rows here, integrate support for all security related SNOW definitions.
+        // add more here, integrate support for ALL security related service now definitions.
     ];
 
     for result in rdr.deserialize::<CsvRow>() {
@@ -76,7 +94,12 @@ fn main() {
                     }
                 }
 
-                html_output.push_str("<tr>");
+                // Add a CSS class 'unsupported' to rows with unsupported values
+                let css_class = if recommended_value == "UNSUPPORTED" { " class=\"unsupported\"" } else { "" };
+
+                html_output.push_str("<tr");
+                html_output.push_str(css_class);
+                html_output.push_str(">");
                 html_output.push_str(&format!(
                     "<td>{}</td><td>{}</td><td>{}</td><td>{}</td>",
                     encode_text_minimal(&display_name),
@@ -90,7 +113,8 @@ fn main() {
         }
     }
 
-    html_output.push_str("</table></body></html>");
+    html_output.push_str("</table>");
+    html_output.push_str("</body></html>");
 
     // Save HTML output to a file
     let output_file = Path::new("snowaudit_report.html");
