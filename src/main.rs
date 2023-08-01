@@ -30,10 +30,10 @@ fn main() {
     let mut html_output = String::new();
     html_output.push_str("<html><head><title>System Properties Audit</title>");
     html_output.push_str("<style>");
-    html_output.push_str("body { font-family: Arial, sans-serif; text-align: center; background-color: #1c1c1c; color: #f2f2f2; }");
+    html_output.push_str("body { font-family: Arial, sans-serif; text-align: center; background-color: #100E16; color: #f2f2f2; }");
     html_output.push_str("table { border-collapse: collapse; width: 80%; margin: auto; }");
     html_output.push_str("th, td { border: 1px solid #f2f2f2; padding: 8px; text-align: left; }");
-    html_output.push_str("th { background-color: #303030; }");
+    html_output.push_str("th { background-color: #000; }");
     html_output.push_str("td { max-width: 300px; white-space: pre-wrap; word-wrap: break-word; }");
     html_output.push_str("img { display: block; margin: 10px auto; width: 500px; }");
     html_output.push_str("</style></head><body>");
