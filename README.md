@@ -43,7 +43,7 @@ Further, it's **important** to note that the specific configurations and best pr
 ## Download
 
 ```
-git clone
+git clone https://github.com/ret2eax/snowaudit.git
 cd snowaudit
 ```
 
