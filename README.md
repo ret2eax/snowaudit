@@ -46,8 +46,15 @@ Further, it's **important** to note that the specific configurations and best pr
 
 ### Release Builds (Recommended)
 
+The following release builds can be pulled from [releases](https://github.com/ret2eax/snowaudit/releases):
+
+* macOS `x86_64 apple darwin`
+* Windows `x86_64-pc-windows-gnu`
+* Linux `x86_64-unknown-linux-gnu`
 
 ### Manual Build
+
+[1]
 
 ```sh
 git clone https://github.com/ret2eax/snowaudit.git
@@ -56,6 +63,13 @@ rustup target add #{target}
 cargo build --release --target #{target}
 ```
 
+[2]
+
+```
+git clone https://github.com/ret2eax/snowaudit.git
+cd snowaudit/src
+cargo run
+```
 
 ## Usage
 
