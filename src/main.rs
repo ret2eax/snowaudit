@@ -2,6 +2,7 @@ use csv::Reader;
 use serde::Deserialize;
 use std::fs;
 use std::path::Path;
+use std::fs::File; // Import File type from std::fs
 
 #[derive(Debug, Deserialize)]
 struct CsvRow {
@@ -18,7 +19,7 @@ struct CsvRow {
 fn main() {
     let args: Vec<String> = std::env::args().collect();
     if args.len() != 2 {
-        eprintln!("Usage: ./{snowaudit} /path/to/sys_properties.list.csv");
+        eprintln!("Usage: ./snowaudit /path/to/sys_properties.list.csv");
         return;
     }
 
@@ -41,9 +42,25 @@ fn main() {
     html_output.push_str("<tr><th>DEFINITION</th><th>CURRENT</th><th>RECOMMENDED</th><th>DESCRIPTION</th></tr>");
 
     // best security practice values go here
-    // Example format: ["Display name", "Value", "Recommended", "Description"]
-    // best security practice values go here
-    // ...
+    // These values should be added in the form of an array of strings, each representing a row
+    // in the CSV table. Each array element should contain four elements in the following format:
+    // ["Display Name", "Value", "Recommended", "Description"]
+    //
+    // - "Display Name": The name of the system property or configuration.
+    // - "Value": The current value of the system property or configuration.
+    // - "Recommended": The recommended value for the system property or configuration based on
+    //                  best security practices.
+    // - "Description": A brief description or explanation of the system property or configuration.
+    //
+    // For example:
+    // let best_security_practice_values = vec![
+    //     ["glide.ui.rotate_sessions", "false", "true", "Enable session rotation for increased security"],
+    //     ["security.enable_ssl3", "true", "false", "Disable SSLv3 to mitigate vulnerabilities"],
+    //     // Add more rows here as needed...
+    // ];
+    //
+    // You can use this array to populate the HTML table in the output with the recommended values
+    // for each system property or configuration.
 
     for result in rdr.deserialize::<CsvRow>() {
         match result {
