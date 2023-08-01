@@ -51,24 +51,30 @@ fn main() {
     // - "Recommended": The recommended value for the system property or configuration based on
     //                  best security practices.
     // - "Description": A brief description or explanation of the system property or configuration.
-    //
-    // For example:
-    // let best_security_practice_values = vec![
-    //     ["glide.ui.rotate_sessions", "false", "true", "Enable session rotation for increased security"],
-    //     ["security.enable_ssl3", "true", "false", "Disable SSLv3 to mitigate vulnerabilities"],
-    //     // Add more rows here as needed...
-    // ];
-    //
-    // You can use this array to populate the HTML table in the output with the recommended values
-    // for each system property or configuration.
+    
+    let best_security_practice_values = vec![
+        ["glide.security.csrf.strict.validation.mode", "false", "true", "Enforces CSRF token strict validation that does not allow resubmit the request if CSRF token does not match."],
+        ["glide.security.csrf_previous.allow", "false", "true", "Allow usage of an expired secure token to identify and validate incoming requests.  This token is used to prevent CSRF attacks."]
+        // Add more rows here, integrate support for all security related SNOW definitions.
+    ];
 
     for result in rdr.deserialize::<CsvRow>() {
         match result {
             Ok(row) => {
                 let display_name = row.display_name.unwrap_or_else(|| "".to_string());
                 let value = row.value.as_ref().map_or_else(|| "".to_string(), |v| v.to_string());
-                let recommended_value = row.recommended.as_ref().map_or_else(|| "UNSUPPORTED".to_string(), |v| v.to_string());
+                let mut recommended_value = row.recommended.as_ref().map_or_else(|| "UNSUPPORTED".to_string(), |v| v.to_string());
                 let description = row.description.unwrap_or_else(|| "".to_string());
+
+                for best_value in &best_security_practice_values {
+                    let display_name_best = best_value[0];
+                    let recommended_value_best = best_value[2];
+
+                    if display_name == display_name_best {
+                        recommended_value = recommended_value_best.to_string();
+                        break;
+                    }
+                }
 
                 html_output.push_str("<tr>");
                 html_output.push_str(&format!(
