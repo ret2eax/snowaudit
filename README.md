@@ -34,7 +34,7 @@
 
 # About
  
-Ghetto software written in C# that aims to assist in instance hardening, through the identification of security issues within integrated ServiceNow configurations.
+Ghetto software written in Rust that aims to assist in instance hardening, through the identification of security issues within integrated ServiceNow configurations.
 
 It's important to **note** that this program is designed to assist you during a configuration review, and should **not** replace manual review. Therefore, it is recommended that this tool **not** be solely relied on, but rather used in support of your own analysis.
 
@@ -42,7 +42,10 @@ Further, it's **important** to note that the specific configurations and best pr
 
 ## Download
 
-Download the portable exectuable from [releases](https://github.com/ret2eax/snowaudit/releases).
+```
+git clone
+cd snowaudit
+```
 
 **SNOWAUDIT** is currently in beta and will be released soon. Feel free to star or watch this repo project for further updates.
 
@@ -51,10 +54,16 @@ Download the portable exectuable from [releases](https://github.com/ret2eax/snow
 There is no current support to fetch a `sys_properties` export directly from a ServiceNow instance. In the future, support will be added for this http parse feature. For the time being, the configuration file will need to be exported manually:
 
 
-1. Authenticate into your ServiceNow instance, or get the client to provide you with their ServiceNow `sys_properties` export.
-2. Export the ServiceNow `sys_properties` to `csv` format `{base_url}/sys_properties_list.do?CSV}`,
-3. Run `snowaudit.exe` and browse to your `sys_properties.csv` export,
-4. Click `audit`.
+* Authenticate into your ServiceNow instance, or get the client to provide you with their ServiceNow `sys_properties` export.
+* Export the ServiceNow `sys_properties` to `csv` format `{base_url}/sys_properties_list.do?CSV}`,
+* Build and run `snowaudit`:
+
+```
+cargo build
+cargo run sys_properties.csv
+```
+
+* View the `output.html` export.
 
 ### Example Output (Truncated)
 
