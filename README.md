@@ -60,7 +60,7 @@ There is no current support to fetch a `sys_properties` export directly from a S
 
 ```
 cargo build
-cargo run sys_properties.csv
+cargo run sys_properties.list.csv
 ```
 
 * View the `output.html` export.
