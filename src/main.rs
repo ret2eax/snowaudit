@@ -75,6 +75,56 @@ fn main() {
         ["glide.security.csrf.strict.validation.mode", "false", "true", "Enforces CSRF token strict validation that does not allow resubmit the request if CSRF token does not match."],
         ["glide.security.csrf_previous.allow", "false", "true", "Allow usage of an expired secure token to identify and validate incoming requests.  This token is used to prevent CSRF attacks."]
         // add more here, integrate support for ALL security related service now definitions.
+        // for exmaple these should be included among others:
+        // glide.ui.escape_test
+        // glide.ui.escape_all_script
+        // glide.ui.rotate_sessions
+        // glide.ui.secure_cookies
+        // glide.security.strict.updates
+        // glide.security.strict.actions
+        // glide.security.use_csrf_token
+        // glide.ui.escape_html_list_field
+        // glide.html.escape_script
+        // glide.script.use.sandbox
+        // glide.soap.strict_security
+        // glide.basicauth.required.scriptedprocessor
+        // glide.basicauth.required.unl
+        // glide.cms.catalog_uri_relative
+        // glide.set_x_frame_options
+        // glide.ui.security.allow_codetag
+        // glide.ui.security.codetag.allow_script
+        // glide.script.allow.ajaxevaluate
+        // glide.cookies.http_only
+        // glide.html.sanitize_all_fields
+        // glide.script.secure.ajaxgliderecord
+        // glide.security.url.whitelist
+        // glide.login.no_blank_password
+        // glide.ui.forgetme
+        // glide.basicauth.required.wsdl
+        // glide.basicauth.required.csv
+        // glide.basicauth.required.excel
+        // glide.basicauth.required.importprocessor
+        // glide.basicauth.required.pdf
+        // glide.basicauth.required.rss
+        // glide.basicauth.required.soap
+        // glide.basicauth.required.jsonv2
+        // glide.basicauth.required.xml
+        // glide.basicauth.required.xsd
+        // glide.login.autocomplete
+        // glide.security.diag_txns_acl
+        // glide.ui.session_timeout
+        // glide.ui.strict_customer_uploaded_static_content
+        // glide.ui.strict_customer_uploaded_content_types
+        // glide.ui.attachment.download_mime_types
+        // glide.ui.attachment.force_download_all_mime_types
+        // glide.attachment.extensions
+        // glide.security.file.mime_type.validation
+        // glide.soap.require_content_type_xml
+        // glide.db.loguser
+        // glide.xml.entity.whitelist.enabled
+        // glide.user.trusted_domain
+        // glide.user.default_password
+        // glide.email.inbound.convert_html_inline_attachment_references       
     ];
 
     for result in rdr.deserialize::<CsvRow>() {
