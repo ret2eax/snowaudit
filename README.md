@@ -52,6 +52,8 @@ The following release builds can be pulled from [releases](https://github.com/re
 
 ### Manual Build -->
 
+Optimised build:
+
 ```sh
 git clone https://github.com/ret2eax/snowaudit.git
 cd snowaudit
@@ -61,7 +63,7 @@ cd target/{target}/release
 ./snowaudit
 ```
 
-Or, build and run project:
+Or, simply build and run project:
 
 ```
 git clone https://github.com/ret2eax/snowaudit.git
@@ -85,6 +87,7 @@ There is no current support to fetch a `sys_properties` export directly from a S
 
 * View `snowaudit_report.html` output.
 
+
 ### Example Output (Truncated)
 
 | DEFINITION | CURRENT | RECOMMENDED | DESCRIPTION |
@@ -95,7 +98,9 @@ There is no current support to fetch a `sys_properties` export directly from a S
 | glide.login.no_blank_password | true | TRUE | Prevents users from setting blank passwords |
 | glide.security.csrf_enabled | false | TRUE | Enables Cross-Site Request Forgery (CSRF) protection |
 | glide.security.file.mime_type.validation | true | TRUE | Validates MIME types |
+| glide.ui.session_timeout | 120	| Manually Review |	Override the default session timeout (30). This value is in minutes. |
 
+**NOTE** `UNSUPPORTED` definitions are hidden by default, but can be toggled in the HTML export. Unsupported in this context means that the definition is not associated with ServiceNow instance hardenining or security related definitions.
 
 ## Terms of Use
 
@@ -106,6 +111,6 @@ By using snowaudit, you agree to the following terms and conditions:
 - The user is solely responsible for any consequences resulting from the use of this software.
 - The software is subject to change without notice, and the developer does not guarantee that it will be updated or maintained.
 
-## Liability Disclaimer
+## Disclaimer
 
-snowaudit is provided for informational purposes only, and the developer of snowaudit disclaims any liability for any damages or losses resulting from the use of snowaudit or the reliance on the information provided. The user acknowledges that they use snowaudit at their own risk, and the developer shall not be liable for any damages, including but not limited to direct, indirect, incidental, special, or consequential damages arising from its use. The user agrees to indemnify and hold the developer of snowaudit harmless from any claims, damages, or expenses arising from the use of snowaudit or the reliance on the information provided.
+**snowaudit** is provided for informational purposes only, and the developer of snowaudit disclaims any liability for any damages or losses resulting from the use of snowaudit or the reliance on the information provided. The user acknowledges that they use snowaudit at their own risk, and the developer shall not be liable for any damages, including but not limited to direct, indirect, incidental, special, or consequential damages arising from its use. The user agrees to indemnify and hold the developer of snowaudit harmless from any claims, damages, or expenses arising from the use of snowaudit or the reliance on the information provided.
