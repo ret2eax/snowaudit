@@ -36,7 +36,7 @@
  
 Ghetto program written in Rust that aims to assist in instance hardening, through the identification of security issues within integrated ServiceNow configurations.
 
-It's important to **note** that this program is designed to assist you during a configuration review, and should **not** replace manual review. Therefore, it is recommended that this tool **not** be solely relied on, but rather used in support of your own analysis.
+It's important to **note** that this program is designed to assist you during a configuration review, and should **not** replace manual review. Therefore, it is recommended that this tool **not** be solely relied on, but rather used in support of your own analysis. This is further reinforced on the basis that this program is not frequently maintained. 
 
 Further, it's **important** to note that the specific configurations and best practices may vary depending on the requirements and policies of an organisation.
 
